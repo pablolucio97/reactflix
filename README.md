@@ -3,7 +3,7 @@
 <h3 align='justify'> ReactFlix is a web application based on NetFlix thats consumes an api from Imgflip.com where you can search for movies.</h1>
 
 <p align="center">
-  <img alt="PyPI - Status" src="https://media.giphy.com/media/BOsZnBzIgXKArdhrHH/giphy.gif">
+  <img alt="PyPI - Status"  width='640' src="https://media.giphy.com/media/BOsZnBzIgXKArdhrHH/giphy.gif">
 </p>
 
 
