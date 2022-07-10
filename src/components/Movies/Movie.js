@@ -1,5 +1,12 @@
 import React from 'react'
-import {MainContainer, MovieContainer, IMG, H3, H4, InfoContainer, VoteAverage, 
+import {
+    MainContainer,
+    MovieContainer,
+    IMG,
+    H3,
+    H4,
+    InfoContainer,
+    VoteAverage,
     OverviewContainer
 } from './styles'
 

@@ -5,6 +5,11 @@ export const MainContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    @media (max-width: 1080px) {
+        max-width: 560px;
+    }
 `
 
 export const OverviewContainer = styled.div`
@@ -41,7 +46,7 @@ export const MovieContainer = styled.div`
     align-items: center;
 
     position: relative;
-    width: 300px;
+    width: 220px;
 
     background-color: #222;
     margin: 20px;
@@ -60,6 +65,18 @@ export const MovieContainer = styled.div`
             color: #ddd;
         }
     }
+    @media (max-width: 1080px) {
+        max-width: 320px;
+    }
+
+    @media (max-width: 720px) {
+        max-width: 200px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 80%;
+    }
+
 
 `
 

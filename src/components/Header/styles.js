@@ -4,7 +4,7 @@ export const SearchContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    height: 64px;
+    height: 44px;
     background-color: #444;
 `
 
