@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import Movie from './components/Movies/Movie'
 
+import Movie from './components/Movies/Movie'
 import GlobalStyle from './globalStyles'
 import { MainContainer } from './components/Movies/styles'
 import { PaginationContainer } from './styles/index'
@@ -12,20 +12,23 @@ function App() {
   const [page, setPage] = useState(1)
   const [availableFilmes, setAvailableFilmes] = useState(10)
 
-  useEffect(async () => {
-    await fetch(`https://api.themoviedb.org/3/search/movie?&api_key=430d44ac1cf4ba6e8d2bb9aa79e4b544&query=${page}`).then(response => response.json()).then(data => {
-      setMovies(data.results)
-      console.log(movies.length)
-    })
-  }, [search, page])
+  const baseApiUrl = 'https://api.themoviedb.org/3/search/movie?&api_key='
+  const apiKey = process.env.REACT_APP_API_KEY
 
+  useEffect(() => {
+    fetch(`${baseApiUrl}${apiKey}&query=${page}`)
+      .then(response => response.json()).then(data => {
+        setMovies(data.results)
+      })
+  }, [search, page, apiKey])
 
   async function searchMovie() {
     try {
       if (search) {
-        await fetch(`https://api.themoviedb.org/3/search/movie?&api_key=430d44ac1cf4ba6e8d2bb9aa79e4b544&query=${search}`).then(response => response.json()).then(data => {
-          setMovies(data.results)
-        })()
+        await fetch(`${baseApiUrl}${apiKey}&query=${search}`)
+          .then(response => response.json()).then(data => {
+            setMovies(data.results)
+          })()
       }
     } catch (error) {
       console.log(error)
@@ -40,7 +43,6 @@ function App() {
   function handleNextPage() {
     setPage(page + 1)
     setAvailableFilmes(availableFilmes + 10)
-    console.log(page)
   }
 
   function handlePreviousPage() {
@@ -48,7 +50,6 @@ function App() {
       setPage(page - 1)
       setAvailableFilmes(availableFilmes - 10)
     }
-    console.log(page)
   }
 
   return (
@@ -74,7 +75,9 @@ function App() {
         }
         {
           !search &&
-          <strong>Exibindo {availableFilmes} de 5719 filmes disponíveis.</strong>
+          <strong>
+            Exibindo {availableFilmes} de 5719 filmes disponíveis.
+          </strong>
         }
         <PaginationContainer>
           <button

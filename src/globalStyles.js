@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 
@@ -53,10 +53,8 @@ const GlobalStyle = createGlobalStyle`
         &:hover{
             background-color: #111;
             border: 1px solid #ff0000;
-            color: #fff;
-            
+            color: #fff; 
         }
-
         @media (max-width: 768px) {
             width: 80%;
         }
@@ -88,6 +86,40 @@ const GlobalStyle = createGlobalStyle`
         opacity: .5;
         cursor: auto;
     }
+    }
+
+    .paginationActiveButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 18px;
+    height: 18px;
+    background-color: #ff0000;
+    padding: 2px;
+    border: none;
+    outline: none;
+    margin: 4px;
+    font-size: .8rem;
+    transition: all .3s;
+    color: #fff;
+    cursor: auto;
+    }
+    .paginationInactiveButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    padding: 2px;
+    border: none;
+    outline: none;
+    margin: 4px;
+    font-size: .8rem;
+    transition: all .3s;
+    color: #fff;
     }
 `
 
